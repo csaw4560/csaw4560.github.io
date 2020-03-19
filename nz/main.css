@@ -23,3 +23,12 @@ header p {
     color: white;
 
 }
+
+header nav img {
+    border-radius: 50%;
+}
+
+body a:link,
+body a:visited {
+    color: black;
+}
