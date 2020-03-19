@@ -63,3 +63,7 @@ main figure img {
     height: 360px;
     border: 1px solid grey;
 }
+
+main ul {
+    list-style-type: circle;
+}
