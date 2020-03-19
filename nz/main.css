@@ -2,7 +2,7 @@ body {
     /* ein kommentar */
     max-width: 1280px;
     margin: auto;
-    font-family: arial;
+    font-family: 'Open Sans', sans-serif,;
 }
 
 header {
@@ -82,3 +82,4 @@ footer .next {
     float: right;
 
 }
+
