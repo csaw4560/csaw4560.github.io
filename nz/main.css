@@ -84,3 +84,11 @@ footer .next {
 
 }
 
+@media screen and (max-width: 900px) {
+    main {
+        max-width: 90%;
+    }
+    header img.banner {
+        width: 100vw;
+    }
+}
