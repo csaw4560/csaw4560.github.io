@@ -32,3 +32,8 @@ body a:link,
 body a:visited {
     color: black;
 }
+
+header nav adress {
+    font-size: 0.9em;
+    font-style: italic;
+}
