@@ -43,3 +43,7 @@ main {
     margin: auto;
 
 }
+
+main p {
+    text-align: justify;
+}
