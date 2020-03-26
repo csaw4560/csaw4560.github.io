@@ -13,10 +13,45 @@ console.log(highscore/10);
 
 let firstname = "John";
 let lastname = 'Smith';
-console.log("Name:", firstname, lastname);
+console.log("Name: ", firstname, lastname);
 
 let fullname = 'Jeffrey "The Dude" Lebowski';
 console.log(fullname);
 
 let template = `Dein Highscore sind ${highscore} Punkte`;
 console.log(template);
+
+let isOver18 = true;
+console.log(isOver18);
+
+let age = 19;
+console.log("über 18", age > 18);
+
+let participants = [ "John", "Jane", "Max"];
+console.log(participants);
+console.log("Einträge im Array: ", participants.length);
+console.log(participants[1]);
+
+let gameHighscores = [2099, 3010, 3333, 5000];
+console.log(gameHighscores);
+
+let user = {
+    firstname: "John",
+    lastname: "Smith",
+    age: 25
+};
+
+console.log(user);
+console.log(user.firstname);
+user.highscore = 200;
+console.log(user);
+user["highscore ever"] = 400;
+console.log(user);
+
+let a = 2;
+let b = 4;
+console.log(a+b);
+console.log(b/(a+b));
+a++;
+console.log(a);
+
