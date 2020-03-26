@@ -79,3 +79,11 @@ for (let j = 0; j < participants.length; j++) {
 participants.forEach(participant => {
     console.log(`Teilnehmer*in ${participant}`);
 });
+
+// Funktionen
+
+function showAge(birthYear) {
+    console.log(`Du bist ca. ${2020-birthYear} Jahre alt.`);
+}
+
+showAge(1997);
