@@ -64,3 +64,9 @@ console.log(a);
 // } else {
 //     console.log("Leider unter 18");
 // }
+
+//for Schleife
+
+for (let i =0; i<10; i++) {
+    console.log(`Schleife ${i}`);
+}
