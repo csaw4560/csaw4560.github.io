@@ -13,4 +13,4 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 }).addTo(mymap);
 
 var marker = L.marker([latitude, longitude]).addTo(mymap);
-marker.bindPopup("<b>title</b>").openPopup();
+marker.bindPopup(`<b>${title}</b>`).openPopup();
