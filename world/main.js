@@ -23,13 +23,24 @@ L.control.layers({
 
 //L.marker([0,0]).addTo(map);
 
-console.log(CONFIRMED);
+//console.log(CONFIRMED);
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
     //console.log(row[2],row[3]);
+    let reg = `${row[0]} ${row[1]}`;
+    let lat = row[2];
+    let lng = row[3];
     let val = row[row.length-1];
-    let mrk = L.marker([row[2],row[3]]).addTo(map);
-    mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
-
+    // let mrk = L.marker([lat,lng]).addTo(map);
+    // mrk.bindPopup(`${reg}: ${val}`);
     
+
+    // A = r2 * PI
+    // r = WURZEL (A/PI)
+    let s = 0.25;
+    let r = Math.sqrt(val*s/Math.PI);
+    let circle = L.circleMarker([lat,lng],{
+        radius: r
+    }).addTo(map);
+    circle.bindPopup(`${reg}: ${val}`);
 }
