@@ -29,8 +29,8 @@ L.control.layers({
 
 //L.marker([0,0]).addTo(map);
 let drawCircles = function (data) {
-    for (let i = 1; i < CONFIRMED.length; i++) {
-        let row = CONFIRMED[i];
+    for (let i = 1; i < data.length; i++) {
+        let row = data[i];
         //console.log(row[2],row[3]);
         let reg = `${row[0]} ${row[1]}`;
         let lat = row[2];
@@ -50,3 +50,7 @@ let drawCircles = function (data) {
         circle.bindPopup(`${reg}: ${val}`);
     }
 };
+
+drawCircles(CONFIRMED);
+//drawCircles(RECOVRED);
+//drawCircles(DEATHS);
