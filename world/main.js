@@ -21,7 +21,7 @@ L.control.layers({
     
 }).addTo(map);
 
-L.marker([0,0]).addTo(map);
+//L.marker([0,0]).addTo(map);
 
 console.log(CONFIRMED);
 for (let i = 1; i < CONFIRMED.length; i++) {
