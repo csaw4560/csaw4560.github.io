@@ -8,6 +8,8 @@ let map = L.map("map", {
     ]
 });
 
+let circleGroup = L.featureGroup().addTo(map);
+
 L.control.layers({
     "OpenTopoMap":startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
@@ -19,7 +21,11 @@ L.control.layers({
     "Thunderforest.SpinalMap": L.tileLayer.provider("Thunderforest.SpinalMap"),
     "OpenMapSurfer.Roads": L.tileLayer.provider("OpenMapSurfer.Roads")
     
+}, {
+    "Thematische Darstellung": circleGroup
 }).addTo(map);
+
+
 
 //L.marker([0,0]).addTo(map);
 
@@ -41,6 +47,6 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     let r = Math.sqrt(val*s/Math.PI);
     let circle = L.circleMarker([lat,lng],{
         radius: r
-    }).addTo(map);
+    }).addTo(circleGroup);
     circle.bindPopup(`${reg}: ${val}`);
 }
