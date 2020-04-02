@@ -19,4 +19,4 @@ L.control.layers({
     "Thunderforest.SpinalMap": L.tileLayer.provider("Thunderforest.SpinalMap"),
     "OpenMapSurfer.Roads": L.tileLayer.provider("OpenMapSurfer.Roads")
     
-}).addTo(map)
+}).addTo(map);
