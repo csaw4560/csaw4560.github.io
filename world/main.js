@@ -20,3 +20,5 @@ L.control.layers({
     "OpenMapSurfer.Roads": L.tileLayer.provider("OpenMapSurfer.Roads")
     
 }).addTo(map);
+
+L.marker([0,0]).addTo(map);
