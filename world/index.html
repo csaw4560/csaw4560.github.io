@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weltkarte</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weltkarte</title>
-    <script defer src ="data.js"></script>
-    <link rel="stylesheet" href="main.css">
-    <script defer src="main.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
-    <script src=https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.min.js> </script>
+    <title>COVID-19 Verbreitung</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="data.js"></script>
+    <script defer src="main.js"></script>
 </head>
+
 <body>
-<div id="map"></div>   
+    <header>
+        <h2><i class="fas fa-map-marked"></i> COVID-19 Verbreitung</h2>
+        <nav>
+            <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/webmapping/webmapping.github.io/tree/master/world">Source</a> |
+                <i class="fas fa-download"></i> <a href="https://github.com/CSSEGISandData/COVID-19">COVID-Data</a>
+            </p>
+        </nav>
+    </header>
+
+    <main>
+        <div id="map"></div>
+    </main>
 </body>
+
 </html>

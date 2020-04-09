@@ -1,9 +1,44 @@
 body {
-    margin: 0;
+    max-width: 1280px;
+    margin: auto;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    min-height: 80px;
+    width: 100%;
+    margin-bottom: 0.5em;
+    color: white;
+    background-color: #0074D9;
+    /* color source: https://clrs.cc/ */
+}
+
+header h2 {
+    float: left;
+    padding-left: 0.5em;
+}
+
+header nav {
+    float: right;
+    padding-right: 0.5em;
+}
+
+header nav p {
+    padding-top: 0.8em;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+header nav a {
+    color: white;
 }
 
 #map {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 80vh;
+    border: 1px solid silver;
+}
 
+main a {
+    color: black;
 }
