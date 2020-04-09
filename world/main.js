@@ -106,3 +106,20 @@ slider.onchange = function(){
 drawCircles();
 //drawCircles(RECOVERED);
 //drawCircles(DEATHS);
+
+let playButton = document.querySelector("#play");
+
+playButton.onclick = function () {
+    let value = slider.min;
+    let runningAnimation = null;
+    runningAnimation = window.setInterval(function () {
+        //console.log(value,"nach 250 ms")
+        slider.value = value;
+        drawCircles();
+        value++;
+        if (value > slider.max){
+            window.clearInterval(runningAnimation);
+        }
+
+    }, 250)
+};
