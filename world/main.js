@@ -34,14 +34,26 @@ let drawCircles = function () {
     let index = header.length -1;
     let options =document.querySelector("#pulldown").options;
     let value = options[options.selectedIndex].value;
-    let label = option[options.selectedIndex].text;
+    let label = options[options.selectedIndex].text;
     //console.log(value,label,options);
+
+    if(value === "confirmed"){
+        data = CONFIRMED;
+    }else if (value === "deaths") {
+        data = DEATHS;
+    }else {
+        data = RECOVERED;
+    }
 
 
     //Datum anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
+    
+    circleGroup.clearLayers();
+    
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
+
         //console.log(row[2],row[3]);
         let reg = `${row[0]} ${row[1]}`;
         let lat = row[2];
