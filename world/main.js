@@ -55,6 +55,11 @@ let drawCircles = function () {
     
     circleGroup.clearLayers();
 
+    
+    data.sort(function compareNumbers(row1,row2) {
+        return row2[index] - row1[index];
+    });
+
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
 
@@ -63,6 +68,10 @@ let drawCircles = function () {
         let lat = row[2];
         let lng = row[3];
         let val = row[index];
+
+        if (val === "0"){
+            continue;
+        }
         // let mrk = L.marker([lat,lng]).addTo(map);
         // mrk.bindPopup(`${reg}: ${val}`);
 
@@ -74,11 +83,9 @@ let drawCircles = function () {
         let circle = L.circleMarker([lat, lng], {
             radius: r,
             color: color
-        });
+        }).addTo(cirleGroup);
 
-        if (val /= 0){
-            circle.addTo(circleGroup)
-        }
+    
         circle.bindPopup(`${reg}: ${val}`);
     }
 };
