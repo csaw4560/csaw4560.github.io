@@ -74,7 +74,11 @@ let drawCircles = function () {
         let circle = L.circleMarker([lat, lng], {
             radius: r,
             color: color
-        }).addTo(circleGroup);
+        });
+
+        if (val /= 0){
+            circle.addTo(circleGroup)
+        }
         circle.bindPopup(`${reg}: ${val}`);
     }
 };
