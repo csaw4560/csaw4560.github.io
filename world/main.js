@@ -1,7 +1,7 @@
 let startLayer = L.tileLayer.provider("OpenTopoMap")
 
 let map = L.map("map", {
-    center: [0, 0],
+    center: [30, 0],
     zoom: 2,
     layers: [
         startLayer
@@ -50,7 +50,7 @@ let drawCircles = function () {
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
     
     circleGroup.clearLayers();
-    
+
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
 
