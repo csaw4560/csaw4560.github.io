@@ -8,6 +8,8 @@ let map = L.map("map", {
     ]
 });
 
+let awsLayer = L.featureGroup().addTo(map);
+
 L.control.layers({
     "BasemapAT.grau": startLayer,
     "BasemapAT": L.tileLayer.provider("BasemapAT"),
@@ -20,6 +22,29 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.orthofoto"),
         L.tileLayer.provider("BasemapAT.overlay")
     ])
+}, {
+    "Wetterstationen Tirol": awsLayer
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
+
+
+let aws = L.geoJson.ajax(awsUrl, {
+    filter: function(feature) {
+        console.log("Feature in filter: ", feature);
+        return feature.geometry.coordinatens[2] > 3000;
+    
+    },
+       
+    pointToLayer: function(point, latlng) {
+        // console.log("point: ", point);
+        let marker = L.marker(latlng).bindPopup(`
+        <h3>${point.properties.name}</h3>
+        <ul>
+        <li>Datum: ${point.properties.date}</li>
+        <li>Lufttemperatur: ${point.properties.LT} °C</li>
+        </ul>
+        `);
+        return marker;
+    }
+}).addTo(awsLayer);
