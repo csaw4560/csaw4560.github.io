@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wien OpenData Beispiele</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <span>Open Government Data (OGD)</span>
+        <a href="https://digitales.wien.gv.at/site/open-data/"><img src="icons/wien_logo.png" alt="StaDt Wien" /></a>
+        <nav>
+            <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/webmapping/webmapping.github.io/tree/master/wien">Source</a> |
+                <i class="fas fa-download"></i> <a href="https://digitales.wien.gv.at/site/open-data/">OGD-Data</a>
+            </p>
+        </nav>
+    </header>
+    <main>
+        <h2>Grundkarte</h2>
+        <p>Die Stadt Wien stellt Zahlen und Daten der Verwaltung öffentlich zur Verfügung. Mehrere hundert Datensätze geben detaillierte Auskunft über Einbahnen, Echtzeitinformationen der Wiener Linien, historische Luftbildbildaufnahmen, Messdaten von Luftschadstoffen oder WLAN Standorte, um nur einige wenige Bereiche zu nennen. Mit diesen verifizierten Daten können Privatpersonen oder Unternehmen Apps programmieren, die das Leben einfacher machen.
+        </p>
+
+        <div id="map"></div>
+    </main>
+
+</body>
+
+</html>
