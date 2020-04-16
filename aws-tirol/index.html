@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wetterstationen in Tirol</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <span>Open Government Data (OGD)</span>
+        <nav>
+            <p>
+                <i class="fab fa-github"></i> <a
+                    href="https://github.com/webmapping/webmapping.github.io/tree/master/aws-tirol">Source</a> |
+                <i class="fas fa-download"></i> <a href="https://www.data.gv.at/katalog/dataset/land-tirol_wetterstationsdatentirol">OGD-Data</a>
+            </p>
+        </nav>
+    </header>
+    <main>
+        <h2>Grundkarte</h2>
+        <p>Messwerte und Lageinformationen der Wetterstationen von HD Tirol und LWD Tirol. Es handelt sich um ungeprüfte
+            Rohdaten. <a href="https://www.data.gv.at/katalog/dataset/land-tirol_wetterstationsdatentirol">Daten bei Open Data Österreich</a>.
+        </p>
+        <div id="map"></div>
+        <ul>
+            <li>Luftdruck (LD) in [hPa]</li>
+            <li>Lufttemperatur (LT) sowie Extrema der letzten 24h in [°C]</li>
+            <li>Taupunkt (TD) in [°C]</li>
+            <li>Oberflächentemperatur (OFT) in [°C]</li>
+            <li>Windgeschwindigkeit und Windböen (WG, WG_BOE) in [m/s]</li>
+            <li>Windrichtung (WR) in [°]</li>
+            <li>Schneehöhe (HS) sowie die Differenzen der letzten 24h, 48h und 72h in [cm]</li>
+            <li>Strahlung, Globalstrahlung (oben: GS_O, unten: GS_U) in [W/m^2]</li>
+            <li>Relative Luftfeuchte (RH) in [%]</li>
+        </ul>
+
+    </main>
+
+</body>
+
+</html>
