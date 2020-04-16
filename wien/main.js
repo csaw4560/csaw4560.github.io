@@ -21,3 +21,13 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }).addTo(map);
+
+let walk = L.geoJson(SPAZIERGANG, {
+    pointToLayer: function(point, latlng) {
+        let marker = L.marker(latlng);
+        console.log("Point", point);
+        marker.bindPopup(`<h3>${point.properties.NAME}</he>
+        <p><a target="links" href ="${point.properties.WEITERE_INF}">Link</a><p>`);
+        return marker;
+    }
+}).addTo(map);
