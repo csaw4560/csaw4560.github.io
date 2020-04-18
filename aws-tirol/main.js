@@ -33,11 +33,21 @@ let aws = L.geoJson.ajax(awsUrl, {
     // filter: function (feature) {
     //     console.log("Feature in filter: ", feature);
     //     return feature.geometry.coordinates[2] > 3000;
+        
     // },
     filter: function(feature) {
         console.log("Feature in filter II: ", feature);
         return feature.properties.hasOwnProperty('LT') === true;
     },
+
+    // filter: function (feature) {
+    //     if (feature.properteis.hasOwnProperty('LT') === true AND 
+    //     feature.geomety.coordinates[2] > 3000) {
+    //         return feature
+            
+    //     }
+        
+    // }
     pointToLayer: function (point, latlng) {
         // console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
