@@ -14,10 +14,16 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
+    <!-- ajax plugin für geojson von einem server -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
+    <!-- leaflet marker cluster plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+
     <link rel="stylesheet" href="main.css">
-    
     <script defer src="main.js"></script>
 </head>
 
@@ -27,14 +33,19 @@
         <a href="https://digitales.wien.gv.at/site/open-data/"><img src="icons/wien_logo.png" alt="StaDt Wien" /></a>
         <nav>
             <p>
-                <i class="fab fa-github"></i> <a href="https://github.com/webmapping/webmapping.github.io/tree/master/wien">Source</a> |
+                <i class="fab fa-github"></i> <a
+                    href="https://github.com/webmapping/webmapping.github.io/tree/master/wien">Source</a> |
                 <i class="fas fa-download"></i> <a href="https://digitales.wien.gv.at/site/open-data/">OGD-Data</a>
             </p>
         </nav>
     </header>
     <main>
         <h2>Grundkarte</h2>
-        <p>Die Stadt Wien stellt Zahlen und Daten der Verwaltung öffentlich zur Verfügung. Mehrere hundert Datensätze geben detaillierte Auskunft über Einbahnen, Echtzeitinformationen der Wiener Linien, historische Luftbildbildaufnahmen, Messdaten von Luftschadstoffen oder WLAN Standorte, um nur einige wenige Bereiche zu nennen. Mit diesen verifizierten Daten können Privatpersonen oder Unternehmen Apps programmieren, die das Leben einfacher machen.
+        <p>Die Stadt Wien stellt Zahlen und Daten der Verwaltung öffentlich zur Verfügung. Mehrere hundert Datensätze
+            geben detaillierte Auskunft über Einbahnen, Echtzeitinformationen der Wiener Linien, historische
+            Luftbildbildaufnahmen, Messdaten von Luftschadstoffen oder WLAN Standorte, um nur einige wenige Bereiche zu
+            nennen. Mit diesen verifizierten Daten können Privatpersonen oder Unternehmen Apps programmieren, die das
+            Leben einfacher machen.
         </p>
 
         <div id="map"></div>
