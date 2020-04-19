@@ -42,8 +42,8 @@ let sights = L.geoJson.ajax(sightUrl, {
         let marker = L.marker(latlng, {
             icon: icon
         });
-        //console.log("Point", point);
-        //Zugang zu point.properties.WEITERE_INF und von da das Bild nehmen für Vorschau
+        console.log("Point", point);
+        
 
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
         <p><a target="links" href="${point.properties.WEITERE_INF}">Link</a></p>
@@ -95,7 +95,7 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 
 L.geoJson.ajax(heritage, {
     style: function (feature) {
-        console.log("Heritage Features", feature)
+        //console.log("Heritage Features", feature)
         if (feature.properties.OBJECTID == 966 ) {
             return {
                 color: "salmon", 
