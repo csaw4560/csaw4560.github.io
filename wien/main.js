@@ -48,7 +48,7 @@ let sights = L.geoJson.ajax(sightUrl, {
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
         <p><a target="links" href="${point.properties.WEITERE_INF}">Link</a></p>
         <p>${point.properties.ADRESSE}</p>
-        <img src = "icons/sight.svg"/>
+        
         
         
         `);
@@ -78,9 +78,9 @@ L.geoJson.ajax(wandern, {
             
         }else {
             return {
-                color: "red",
+                color: "black",
                 weight: 3,
-                dashArray: "2 10 2 10 2 10 2"
+                dashArray: "0,5"
             };
         }
         
