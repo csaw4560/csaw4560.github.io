@@ -73,7 +73,7 @@ L.geoJson.ajax(wandern, {
             return {
                 color: "black",
                 weight: 5,
-                dashArray: 20
+                dashArray: "10"
             };
             
         }else {
