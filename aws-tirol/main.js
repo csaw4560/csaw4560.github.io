@@ -115,5 +115,5 @@ aws.on("data:loaded", function() {
     drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.wind.addTo(map);
+    overlay.temperature.addTo(map);
 });
