@@ -27,7 +27,7 @@ L.control.layers({
 }, {
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
-    "Wind (km/h)": overlay.wind
+    "Windgeschwindigkeit (km/h)": overlay.wind
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -87,10 +87,7 @@ let drawTemperature = function(jsonData) {
         }
     }).addTo(overlay.temperature);
 };
-//neues overlay definieren und zu l.control layers hinzufügen
-//die funktion draw wind als 1:1 Kopie von draw Temperature mit Anpassungen ( in km/h nicht in m/s)
-// .label-wind im main css erstellen
-//die funktion draw wind in data:loaded aufrufen
+
 let drawWind = function(jsonData) {
     console.log("aus der Funktin II", jsonData)
     L.geoJson(jsonData, {
@@ -98,12 +95,12 @@ let drawWind = function(jsonData) {
             return feature.properties.WG;
         },
         pointToLayer: function(feature, latlng){
-            let kmhValue = feature.properties.WG * 3.6
+            kmhValue = Math.round(feature.properties.WG * 3.6)
             console.log("Khm Value",kmhValue)
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m)`,
                 icon: L.divIcon({
-                    html: `<div class="label-wind"> ${kmhValue.toFixed(1)}</div>`,
+                    html: `<div class="label-wind"> ${kmhValue}</div>`,
                     //html: `<div class="label-wind"> ${feature.properties.WG.toFixed(1)}</div>`,
                     className: "ignore-me" //dirty hack
                 })
@@ -118,6 +115,5 @@ aws.on("data:loaded", function() {
     drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.temperature.addTo(map);
     overlay.wind.addTo(map);
 });
