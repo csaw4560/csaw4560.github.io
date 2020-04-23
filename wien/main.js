@@ -95,19 +95,13 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 
 L.geoJson.ajax(heritage, {
     style: function (feature) {
-        //console.log("Heritage Features", feature)
-        if (feature.properties.OBJECTID == 966 ) {
+        console.log("Heritage Features", feature)
+        if (feature.properties.TYP == 1 ) {
             return {
                 color: "salmon", 
                 fillOpacity: 0.3,
                 stroke: false
             };       
-        }else if (feature.properties.OBJECTID == 967 ){
-            return {
-                color: "salmon",
-                fillOpacity: 0.3,
-                stroke: false
-            }
         }else {
             return {
                 color: "yellow",
