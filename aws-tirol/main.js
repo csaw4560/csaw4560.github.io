@@ -114,13 +114,15 @@ let drawWind = function(jsonData) {
             return feature.properties.WG;
         },
         pointToLayer: function(feature, latlng){
-            let color = getColor(feature.properties.WG, COLORS.wind);
-            kmhValue = Math.round(feature.properties.WG * 3.6)
-            console.log("Khm Value",kmhValue)
+            
+            kmhValue = Math.round(feature.properties.WG * 3.6);
+            let color = getColor(kmhValue, COLORS.wind);
+            let rotation = feature.properties.WR;
+            //console.log("Khm Value",kmhValue)
             return L.marker(latlng, {
-                title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m)`,
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m) - ${kmhValue} km/h`,
                 icon: L.divIcon({
-                    html: `<div class="label-wind" style="background-color:${color}"> ${kmhValue}</div>`,
+                    html: `<div class="label-wind"><i class="fas fa-arrow-circle-up" style="color:${color};transform: rotate(${rotation}deg)"></i></div>`,
                     //html: `<div class="label-wind"> ${feature.properties.WG.toFixed(1)}</div>`,
                     className: "ignore-me" //dirty hack
                 })
@@ -135,5 +137,5 @@ aws.on("data:loaded", function() {
     drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.temperature.addTo(map);
+    overlay.wind.addTo(map);
 });
