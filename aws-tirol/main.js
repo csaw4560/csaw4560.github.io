@@ -9,7 +9,9 @@ let map = L.map("map", {
 let overlay = {
     stations: L.featureGroup(),
     temperature: L.featureGroup(),
-    wind: L.featureGroup()
+    wind: L.featureGroup(),
+    humidity: L.feautureGroup(),
+    snow: L.featureGroup()
 }
 
 L.control.layers({
@@ -27,31 +29,21 @@ L.control.layers({
 }, {
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
-    "Windgeschwindigkeit (km/h)": overlay.wind
+    "Windgeschwindigkeit (km/h)": overlay.wind,
+    "Relative Luftfeuchte (%)": overlay.humidity,
+    "Schneehöhe (cm)": overlay.snow
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
 
 
 let aws = L.geoJson.ajax(awsUrl, {
-    // filter: function (feature) {
-    //     console.log("Feature in filter: ", feature);
-    //     return feature.geometry.coordinates[2] > 3000;
-        
-    // },
+    
     filter: function(feature) {
         console.log("Feature in filter II: ", feature);
         return feature.properties.hasOwnProperty('LT') === true;
     },
 
-    // filter: function (feature) {
-    //     if (feature.properteis.hasOwnProperty('LT') === true AND 
-    //     feature.geomety.coordinates[2] > 3000) {
-    //         return feature
-            
-    //     }
-        
-    // }
     pointToLayer: function (point, latlng) {
         // console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
