@@ -173,8 +173,6 @@ aws.on("data:loaded", function() {
     overlay.stations.addTo(map);
 });
 
-//Animation des Niederschlags der letzten zwei Stunden
-
 var rainviewer = L.control.rainviewer({
     position: 'bottomleft',
     nextButtonText: '>',
