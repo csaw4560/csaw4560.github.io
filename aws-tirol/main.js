@@ -137,7 +137,7 @@ let drawHumidity = function(jsonData) {
                 })
             })
         }
-    }).addTo(overlay.temperature);
+    }).addTo(overlay.humidity);
 };
 
 let drawSnow = function(jsonData) {
@@ -156,7 +156,7 @@ let drawSnow = function(jsonData) {
                 })
             })
         }
-    }).addTo(overlay.temperature);
+    }).addTo(overlay.snow);
 };
 
 aws.on("data:loaded", function() {
