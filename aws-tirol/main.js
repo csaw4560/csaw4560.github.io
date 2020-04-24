@@ -144,14 +144,14 @@ let drawSnow = function(jsonData) {
     console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
         filter: function(feature) {
-            return feature.properties.SH;
+            return feature.properties.HS;
         },
         pointToLayer: function(feature, latlng){
-            let color = getColor(feature.properties.SH, COLORS.snow);
+            let color = getColor(feature.properties.HS, COLORS.snow);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m)`,
                 icon: L.divIcon({
-                    html: `<div class ="label-snow" style="background-color:${color}">${feature.properties.SH.toFixed(1)}</div>`,
+                    html: `<div class ="label-snow" style="background-color:${color}">${feature.properties.HS.toFixed(1)}</div>`,
                     className: "ignore-me" //dirty hack
                 })
             })
