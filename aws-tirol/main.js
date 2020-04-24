@@ -1,8 +1,11 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
+    center: [47.3, 11.5],
+    zoom: 8,
     layers: [
         startLayer
+        
     ]
 });
 
@@ -167,5 +170,5 @@ aws.on("data:loaded", function() {
     
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.wind.addTo(map);
+    overlay.stations.addTo(map);
 });
