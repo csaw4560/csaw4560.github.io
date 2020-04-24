@@ -66,3 +66,31 @@ main h2 {
         -1px 1px 0 black,
         1px 1px 0 black
 }
+
+.label-humidity {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding:0.3em;
+    border: 1px solid gray;
+    background-color: silver;
+    display: inline;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white
+}
+
+.label-snow {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding:0.3em;
+    border: 1px solid gray;
+    background-color: silver;
+    display: inline;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white
+}
