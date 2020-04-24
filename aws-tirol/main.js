@@ -10,7 +10,7 @@ let overlay = {
     stations: L.featureGroup(),
     temperature: L.featureGroup(),
     wind: L.featureGroup(),
-    humidity: L.feautureGroup(),
+    humidity: L.featureGroup(),
     snow: L.featureGroup()
 }
 
@@ -77,9 +77,6 @@ let getColor = function(val, ramp) {
     return col; 
 };
 
-
-//console.log(color);
-
 let drawTemperature = function(jsonData) {
     console.log("aus der Funktin", jsonData);
     L.geoJson(jsonData, {
@@ -122,11 +119,52 @@ let drawWind = function(jsonData) {
         }
     }).addTo(overlay.wind);
 
-}
+};
+
+let drawHumidity = function(jsonData) {
+    console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function(feature) {
+            return feature.properties.RH;
+        },
+        pointToLayer: function(feature, latlng){
+            let color = getColor(feature.properties.RH, COLORS.humidity);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m)`,
+                icon: L.divIcon({
+                    html: `<div class ="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(1)}</div>`,
+                    className: "ignore-me" //dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.temperature);
+};
+
+let drawSnow = function(jsonData) {
+    console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function(feature) {
+            return feature.properties.SH;
+        },
+        pointToLayer: function(feature, latlng){
+            let color = getColor(feature.properties.SH, COLORS.snow);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]} m)`,
+                icon: L.divIcon({
+                    html: `<div class ="label-snow" style="background-color:${color}">${feature.properties.SH.toFixed(1)}</div>`,
+                    className: "ignore-me" //dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.temperature);
+};
+
 aws.on("data:loaded", function() {
-    //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
+    drawHumidity(aws.toGeoJSON());
+    drawSnow(aws.toGeoJSON());
+    
     map.fitBounds(overlay.stations.getBounds());
 
     overlay.wind.addTo(map);
