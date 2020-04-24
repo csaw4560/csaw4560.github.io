@@ -173,15 +173,15 @@ aws.on("data:loaded", function() {
     overlay.stations.addTo(map);
 });
 
-var rainviewer = L.control.rainviewer({
-    position: 'bottomleft',
-    nextButtonText: '>',
-    playStopButtonText: 'Start/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Time:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-});
-rainviewer.addTo(map);
+// var rainviewer = L.control.rainviewer({
+//     position: 'bottomleft',
+//     nextButtonText: '>',
+//     playStopButtonText: 'Start/Stop',
+//     prevButtonText: '<',
+//     positionSliderLabelText: "Time:",
+//     opacitySliderLabelText: "Opacity:",
+//     animationInterval: 500,
+//     opacity: 0.5
+// });
+// rainviewer.addTo(map);
 
