@@ -52,8 +52,8 @@ overlay.adlerblicke.addTo(map);
 
 let drawEtappe = function(nr) {
     overlay.etappen.clearLayers();
-    
-    //sconsole.log(ETAPPEN[nr].track);
+
+    //console.log(ETAPPEN[nr].track);
     let track = ETAPPEN[nr].track.replace("A", "");
 
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
@@ -77,6 +77,17 @@ let drawEtappe = function(nr) {
         map.fitBounds(evt.target.getBounds());
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
+
+    for (const key in ETAPPEN[nr]) {
+        const val = ETAPPEN[nr][key];
+        let elem = document.querySelector(`#et-${key}`)
+        if (elem) {
+                elem.innerHTML = val;
+
+        }
+            
+    
+    }
 };
 //drawEtappe(11);
 
