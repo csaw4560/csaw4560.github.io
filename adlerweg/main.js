@@ -87,5 +87,9 @@ for (let i = 1; i < ETAPPEN.length; i++) {
     
 }
 
-
+pulldown.onchange = function(evt) {
+    let nr = evt.target.options[evt.target.options.selectedIndex].value;
+    console.log(nr);
+    drawEtappe(nr);
+}
 
