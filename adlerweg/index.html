@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adlerweg Tirol</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+    <script  src="etappen.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <span>Adlerweg Tirol</span>
+        <nav>
+            <p>
+                <i class="fab fa-github"></i> <a href="https://github.com/webmapping/webmapping.github.io/tree/master/adlerweg">Source</a> |
+                <i class="fas fa-download"></i> <a href="https://www.data.gv.at/katalog/dataset/d705d383-a7aa-48ef-aa8a-d66ab25122f2">OGD-Data</a> |
+                <i class="fas fa-hiking"></i> <a href="https://www.tirol.at/reisefuehrer/sport/wandern/adlerweg">Homepage</a>
+            </p>
+        </nav>
+    </header>
+    <main>
+        <h2>Adlerweg - Tirols bekanntester Wanderweg</h2>
+        <p>In der hochalpinen Bergwelt, nah unterm Himmel, verläuft der Adlerweg von Osten nach Westen durch ganz Tirol. Der Wegverlauf gleicht der Silhouette eines Adlers, der mit weit ausgebreiteten Schwingen in den Lüften schwebt. Wer das Weitwander-Abenteuer annimmt, wird von der Vielseitigkeit des Adlerwegs begeistert sein. Der Verlauf durch die verschiedenen Gebirgszüge garantiert Abwechslung: Wer das Land mit weitläufigen Wanderungen entdecken will, wird ebenso begeistert sein wie geübte Bergsteiger und Alpinisten, die nach Gipfelsiegen streben. Alpine Erfahrung, Trittsicherheit und Schwindelfreiheit sind die Voraussetzung bei vielen Etappen.</p>
+        <div id="map"></div>
+
+    </main>
+
+</body>
+
+</html>
