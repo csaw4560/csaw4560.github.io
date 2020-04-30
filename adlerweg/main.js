@@ -88,8 +88,10 @@ let drawEtappe = function(nr) {
             
     
     }
+    
+    
 };
-//drawEtappe(11);
+drawEtappe(1);
 
 let pulldown = document.querySelector("#pulldown");
 
