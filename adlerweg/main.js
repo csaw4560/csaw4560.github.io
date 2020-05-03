@@ -79,11 +79,18 @@ let drawEtappe = function(nr) {
     overlay.etappen.addTo(map);
 
     for (const key in ETAPPEN[nr]) {
-        const val = ETAPPEN[nr][key];
+        
+        if (key === "einkehr") {
+            val = ETAPPEN[nr][key].replace(/#/g, ", ");
+        } else {
+            val = ETAPPEN[nr][key];
+        }
         let elem = document.querySelector(`#et-${key}`)
-        if (elem) {
-                elem.innerHTML = val;
+        if (key === "track") {
+                elem.href = `gpx/AdlerwegEtappe${ETAPPEN[nr][key].replace("A","")}.gpx`;
 
+        }else {
+            elem.innerHTML = val;
         }
             
     

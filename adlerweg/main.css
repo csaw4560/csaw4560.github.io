@@ -41,3 +41,7 @@ main h2 {
     height: 70vh;
     border: 1px solid gray;
 }
+
+main ul {
+    list-style-type: none;
+}
