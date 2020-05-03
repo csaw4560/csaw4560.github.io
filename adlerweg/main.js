@@ -79,6 +79,8 @@ let drawEtappe = function(nr) {
     overlay.etappen.addTo(map);
 
     for (const key in ETAPPEN[nr]) {
+
+        let val = "abc"
         
         if (key === "einkehr") {
             val = ETAPPEN[nr][key].replace(/#/g, ", ");
