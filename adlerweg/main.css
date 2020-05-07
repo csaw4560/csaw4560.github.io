@@ -42,8 +42,16 @@ main h2 {
     border: 1px solid gray;
 }
 
-main ul {
-    list-style-type: none;
+.summary {
+    margin-bottom: 2em;
+}
+
+.badge {
+    display: inline;
+    padding: 0.4em;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-right: 0.5em;
 }
 
 .adler-theme.elevation-polyline {

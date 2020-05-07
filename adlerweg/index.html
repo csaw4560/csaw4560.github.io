@@ -15,20 +15,18 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
 
-    <link rel="stylesheet" href="main.css">
-    <script defer src="main.js"></script>
-    <script  src="etappen.js"></script>
-    <script  src="blicke.js"></script>
-    <script  src="einkehr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.0/gpx.js"></script>
 
-    <!-- leaflet elevation -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    
     <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
     <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.0/gpx.js"></script>
-
+    <link rel="stylesheet" href="main.css">
+    <script src="etappen.js"></script>
+    <script src="blicke.js"></script>
+    <script src="einkehr.js"></script>
+    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -45,30 +43,42 @@
     <main>
         <h2 id="et-titel">Adlerweg - Tirols bekanntester Wanderweg</h2>
         <p id="et-text">In der hochalpinen Bergwelt, nah unterm Himmel, verläuft der Adlerweg von Osten nach Westen durch ganz Tirol. Der Wegverlauf gleicht der Silhouette eines Adlers, der mit weit ausgebreiteten Schwingen in den Lüften schwebt. Wer das Weitwander-Abenteuer annimmt, wird von der Vielseitigkeit des Adlerwegs begeistert sein. Der Verlauf durch die verschiedenen Gebirgszüge garantiert Abwechslung: Wer das Land mit weitläufigen Wanderungen entdecken will, wird ebenso begeistert sein wie geübte Bergsteiger und Alpinisten, die nach Gipfelsiegen streben. Alpine Erfahrung, Trittsicherheit und Schwindelfreiheit sind die Voraussetzung bei vielen Etappen.</p>
+
+        <div class="summary">
+            <div class="badge">
+                <i class="fas fa-walking"></i> <span id="et-km"></span>km
+            </div>
+            <div class="badge">
+                <i class="fas fa-clock"></i> <span id="et-stunden"></span>h
+            </div>
+            <div class="badge">
+                <i class="fas fa-sort-amount-up-alt"></i> <span id="et-auf"></span>m
+            </div>
+            <div class="badge">
+                <i class="fas fa-mountain"></i> <span id="et-hp"></span>m
+            </div>
+            <div class="badge">
+                <i class="fas fa-sort-amount-down-alt"></i> <span id="et-ab"></span>m
+            </div>
+            <div class="badge">
+                <em><span id="et-grad"></span></em>
+            </div>
+            <div class="badge">
+                <i class="fas fa-download"></i> <span id="et-track"></span>
+            </div>
+        </div>
+
         <select id="pulldown"></select>
         <div id="map"></div>
-        <div id ="profile"></div>
-        <p id = "et-info"></p>
-        
-        <h3>Das Wichtigste auf einen Blick</h3>
-        <ul>
-            <li>Etappenummer: <span id="et-nr"></span></li>
-            <li>Start: <span id="et-start"></span></li>
-            <li>Ziel: <span id="et-ziel"></span></li>
-            <li>Höhenmeter (bergauf): <span id="et-auf"></span></li>
-            <li>Höhenmeter (bergab): <span id="et-ab"></span></li>
-            <li>Höchster Punkt: <span id="et-hp"></span> m</li>
-            <li>Schwierigkeitsgrad: <span id="et-grad"></span></li>
-            <li>Streckenlänge: <span id="et-km"></span> km</li>
-            <li>Gehzeit: <span id="et-stunden"></span> h</li>
-            <li>Einkehrmöglichkeiten: <span id="et-einkehr"></span></li>
-        
-        </ul>
-        
-        <h5><a id = "et-track" href = "gpx/AdlerwegEtappe01.gpx" > Link zum Download der Etappe als .gpx</a></h5>
+        <div id="profile"></div>
 
-    
-
+        <h3>Streckenbeschreibung</h3>
+        <p>
+            <strong>Start</strong>: <span id="et-start"></span> |
+            <strong>Ziel</strong>: <span id="et-ziel"></span> |
+            <strong>Einkehrmöglichkeiten</strong>: <span id="et-einkehr"></span>
+        </p>
+        <div id="et-info"></div>
 
     </main>
 
