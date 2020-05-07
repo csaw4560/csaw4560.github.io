@@ -179,7 +179,7 @@ map.on("zoomend moveend", function (evt) {
                     png= "mountains.png";
                     break;
                 default:
-                    png = "informantion.png";
+                    png = "information.png";
 
 
             }
@@ -188,7 +188,7 @@ map.on("zoomend moveend", function (evt) {
                     iconSize: [32, 37],
                     iconAnchor: [16, 37],
                     popupAnchor: [0, -37],
-                    iconUrl: `icons/${png}.png`
+                    iconUrl: `icons/${png}`
                 })   
             }).addTo(overlay.wikipedia);
             let img = "";
