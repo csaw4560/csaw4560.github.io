@@ -45,3 +45,7 @@ main h2 {
 main ul {
     list-style-type: none;
 }
+
+.adler-theme.elevation-polyline {
+    stroke-opacity: 0.0;
+}

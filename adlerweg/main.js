@@ -144,5 +144,5 @@ let controlElevation = L.control.elevation({
     detached: true,
     elevationDiv: "#profile",
     followMarker: false,
-    theme: "steelblue-theme"
+    theme: "adler-theme"
 }).addTo(map);
